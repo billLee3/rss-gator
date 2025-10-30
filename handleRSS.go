@@ -75,17 +75,13 @@ func fetchFeed(ctx context.Context, feedURL string) (*RSSFeed, error) {
 }
 
 // Need a handler to wrap this as well
-func handlerAddFeed(s *state, cmd command) error {
+func handlerAddFeed(s *state, cmd command, user database.User) error {
 	if len(cmd.Args) < 2 {
 		return fmt.Errorf("usage: %s <name>", cmd.Name)
 	}
 	name := cmd.Args[0]
 	url := cmd.Args[1]
 
-	user, err := s.db.GetUser(context.Background(), s.cfg.CurrentUserName)
-	if err != nil {
-		return fmt.Errorf("no user signed in")
-	}
 	//feedStruct := addFeed(name, url)
 	feed, err := s.db.CreateFeed(context.Background(), database.CreateFeedParams{
 		ID:        uuid.New(),
@@ -97,6 +93,16 @@ func handlerAddFeed(s *state, cmd command) error {
 	})
 	if err != nil {
 		return fmt.Errorf("unable to create a new feed: %v", err)
+	}
+	_, err = s.db.CreateFeedFollow(context.Background(), database.CreateFeedFollowParams{
+		ID:        uuid.New(),
+		CreatedAt: time.Now().UTC(),
+		UpdatedAt: time.Now().UTC(),
+		UserID:    user.ID,
+		FeedID:    feed.ID,
+	})
+	if err != nil {
+		return fmt.Errorf("unable to create feed follow: %v", err)
 	}
 	fmt.Printf("* ID: %v\n", feed.ID)
 	fmt.Printf("* Created At: %v\n", feed.CreatedAt)
