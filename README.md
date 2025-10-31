@@ -1,6 +1,6 @@
 ### Setup Required To Run the Program
 ---
-*Linux*
+(*Linux*) 
 Install postgres on your local machine using the following code:
 ```
 sudo apt update
@@ -8,7 +8,7 @@ sudo apt install postgresql postgresql-contrib
 ```
 If on linux then you will need to update your password, likeso:
 `sudo passwd postgres`
-*Linux*
+(*Linux*) 
 Install Golang on your machine using the following code:
 ```
 sudo apt install golang-go
