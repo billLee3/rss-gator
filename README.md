@@ -41,16 +41,16 @@ This will align the database structure to what is necessary to run the applicati
 From the root of the rss-gator directory (created from go install step), run `go build`.
 
 Some different commands that you can run from the root of the rss-gator directory are as follows:
-`go run . register <name>` - registers a user
-`go run . login <name>` - logs in a user
-`go run . users` - displays a list of all users registered to the db
-`go run . addFeed <title> <url>` - adds a feed to the database
-`go run . feeds` - displays all of the feeds being tracked in the database
-`go run . agg <timeDuration: 1m>` - aggregates the data from the feeds in the feeds table
-`go run . follow <url>` - allows users to follow certain feeds
-`go run . following` - displays which feeds the logged in user is following
-`go run . unfollow <url>` - unfollows a feed followed by the user
-`go run . browse` - displays posts by the logged in user
+- `go run . register <name>` - registers a user
+- `go run . login <name>` - logs in a user
+- `go run . users` - displays a list of all users registered to the db
+- `go run . addFeed <title> <url>` - adds a feed to the database
+- `go run . feeds` - displays all of the feeds being tracked in the database
+- `go run . agg <timeDuration: 1m>` - aggregates the data from the feeds in the feeds table
+- `go run . follow <url>` - allows users to follow certain feeds
+- `go run . following` - displays which feeds the logged in user is following
+- `go run . unfollow <url>` - unfollows a feed followed by the user
+- `go run . browse` - displays posts by the logged in user
 
 
 
