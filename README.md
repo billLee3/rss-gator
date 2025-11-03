@@ -1,4 +1,15 @@
-### Setup Required To Run the Program
+## RSS Gator
+### Description
+---
+This app allows you to create a RSS feed aggregation. You input the RSS feeds you'd like to follow and you can pull data from the feeds and store them in a Postgres Db.
+
+### Motivation
+---
+To automate some of the daily searching I do, while integrating a CLI tool with a Postgres Database
+
+###Quick Start
+---
+#### Setup Required To Run the Program
 ---
 (*Linux*) 
 Install postgres on your local machine using the following code:
@@ -13,7 +24,7 @@ Install Golang on your machine using the following code:
 ```
 sudo apt install golang-go
 ```
-### Install RSS-Gator
+#### Install RSS-Gator
 ---
 Now that you have Golang installed on your machine use the following golang command from the terminal
 ```
@@ -21,7 +32,7 @@ go install https://github.com/billLee3/rss-gator@latest
 ```
 The program should be on your machine now. 
 
-### Setting up your local config file
+#### Setting up your local config file
 ---
 In your home directory, create a `.gatorconfig.json` file from the terminal using the following bash command:
 `touch .gatorconfig.json`
@@ -31,12 +42,12 @@ Within the `.gatorconfig.json` create json to hold your database url. Example be
   db_url: "postgres://postgres:postgres@localhost:5432/gator?sslmode=disable"
 }
 ```
-### Migrate the DB
+#### Migrate the DB
 ---
 From rss-gator/sql/schema directory run:
 `goose postgres <connection_string> up`
 This will align the database structure to what is necessary to run the application
-### Running the Program
+### Usage
 ---
 From the root of the rss-gator directory (created from go install step), run `go build`.
 
@@ -51,7 +62,6 @@ Some different commands that you can run from the root of the rss-gator director
 - `go run . following` - displays which feeds the logged in user is following
 - `go run . unfollow <url>` - unfollows a feed followed by the user
 - `go run . browse` - displays posts by the logged in user
-
 
 ## Contributing
 ---
