@@ -53,4 +53,6 @@ Some different commands that you can run from the root of the rss-gator director
 - `go run . browse` - displays posts by the logged in user
 
 
-
+## Contributing
+---
+If you'd like to contribute fork the repository and open a pull request to the main branch. 
