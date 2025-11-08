@@ -7,7 +7,7 @@ This app allows you to create a RSS feed aggregation. You input the RSS feeds yo
 ---
 To automate some of the daily searching I do, while integrating a CLI tool with a Postgres Database
 
-###Quick Start
+### Quick Start
 ---
 #### Setup Required To Run the Program
 ---
