@@ -45,7 +45,7 @@ Within the `.gatorconfig.json` create json to hold your database url. Example be
 #### Migrate the DB
 ---
 From rss-gator/sql/schema directory run:
-`goose postgres <connection_string> up`
+`goose postgres [connection_string] up`.
 This will align the database structure to what is necessary to run the application
 ### Usage
 ---
@@ -63,6 +63,6 @@ Some different commands that you can run from the root of the rss-gator director
 - `go run . unfollow <url>` - unfollows a feed followed by the user
 - `go run . browse` - displays posts by the logged in user
 
-## Contributing
+### Contributing
 ---
 If you'd like to contribute fork the repository and open a pull request to the main branch. 
